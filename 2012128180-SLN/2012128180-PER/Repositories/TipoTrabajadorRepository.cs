@@ -10,5 +10,11 @@ namespace _2012128180_PER.Repositories
 {
     public class TipoTrabajadorRepository : Repository<TipoTrabajador>, ITipoTrabajadorRepository
     {
+        private _2012128180DbContext _Context;
+
+        public TipoTrabajadorRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

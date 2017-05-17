@@ -10,5 +10,11 @@ namespace _2012128180_PER.Repositories
 {
     public class AdministradorLineaRepository : Repository<AdministradorLinea>, IAdministradorLineaRepository
     {
+        private _2012128180DbContext _Context;
+
+        public AdministradorLineaRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

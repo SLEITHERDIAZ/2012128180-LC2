@@ -8,6 +8,7 @@ namespace _2012128180_ENT
 {
    public class EquipoCelular
     {
+
         public int EquipoCelularId { get; set; }
        
         public int AdministradorEquipoId { get; set; }

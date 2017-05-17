@@ -10,5 +10,11 @@ namespace _2012128180_PER.Repositories
 {
     public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
+        private _2012128180DbContext _Context;
+
+        public ClienteRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

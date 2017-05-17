@@ -10,5 +10,11 @@ namespace _2012128180_PER.Repositories
 {
     public class TipoPlanRepository : Repository<TipoPlan>, ITipoPlanRepository
     {
+        private _2012128180DbContext _Context;
+
+        public TipoPlanRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

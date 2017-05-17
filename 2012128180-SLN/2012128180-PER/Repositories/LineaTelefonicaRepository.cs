@@ -10,5 +10,11 @@ namespace _2012128180_PER.Repositories
 {
     public class LineaTelefonicaRepository : Repository<LineaTelefonica>, ILineaTelefonicaRepository
     {
+        private _2012128180DbContext _Context;
+
+        public LineaTelefonicaRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

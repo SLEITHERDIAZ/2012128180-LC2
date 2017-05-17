@@ -92,6 +92,7 @@
     <Compile Include="Repositories\TipoTrabajadorRepository.cs" />
     <Compile Include="Repositories\TrabajadorRepository.cs" />
     <Compile Include="Repositories\UbigeoRepository.cs" />
+    <Compile Include="Repositories\UnityOfWork.cs" />
     <Compile Include="Repositories\VentasRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2012128180_ENT.IRepositories
 {
-    public interface IEstadoEvaluacionRepository : IRepository<EstadoEvaluacion>
+    public interface IEstadoEvaluacionRepository : IRepository<EstadoEvaluacionRepository>
     {
     }
 }

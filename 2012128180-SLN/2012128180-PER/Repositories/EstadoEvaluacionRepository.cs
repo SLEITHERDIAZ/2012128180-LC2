@@ -8,7 +8,13 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Repositories
 {
-    public class EstadoEvaluacionRepository : Repository<EstadoEvaluacion>, IEstadoEvaluacionRepository
+    public class EstadoEvaluacionRepository : Repository<_2012128180_ENT.EstadoEvaluacionRepository>, IEstadoEvaluacionRepository
     {
+        private _2012128180DbContext _Context;
+
+        public EstadoEvaluacionRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace _2012128180_PER.EntitiesConfigurations
 {
    public class EquipoCelularConfiguration : EntityTypeConfiguration<EquipoCelular>
     {
+
         public EquipoCelularConfiguration()
         {
             ToTable("EquipoCelular");

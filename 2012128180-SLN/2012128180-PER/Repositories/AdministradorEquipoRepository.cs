@@ -10,5 +10,11 @@ namespace _2012128180_PER.Repositories
 {
     public class AdministradorEquipoRepository : Repository<AdministradorEquipo>, IAdministradorEquipoRepository
     {
+        private _2012128180DbContext _Context;
+
+        public AdministradorEquipoRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

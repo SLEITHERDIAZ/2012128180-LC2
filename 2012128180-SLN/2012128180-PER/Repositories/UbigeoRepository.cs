@@ -10,5 +10,11 @@ namespace _2012128180_PER.Repositories
 {
     public class UbigeoRepository : Repository<Ubigeo>, IUbigeoRepository
     {
+        private _2012128180DbContext _Context;
+
+        public UbigeoRepository(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
     }
 }

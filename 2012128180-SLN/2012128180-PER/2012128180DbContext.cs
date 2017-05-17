@@ -10,6 +10,13 @@ namespace _2012128180_PER
 {
     public class _2012128180DbContext : DbContext
     {
+        private _2012128180DbContext _Context;
+
+        public _2012128180DbContext(_2012128180DbContext context)
+        {
+            _Context = context;
+        }
+
         public DbSet<AdministradorEquipo> AdministradorEquipo { get; set; }
         public DbSet<AdministradorLinea> AdministradorLinea { get; set; }
         public DbSet<CentroAtencion> CentroAtencion { get; set; }
@@ -18,7 +25,7 @@ namespace _2012128180_PER
         public DbSet<Departamento> Departameto { get; set; }
         public DbSet<Direccion> Direccion { get; set; }
         public DbSet<EquipoCelular> EquipoCelular { get; set; }
-        public DbSet<EstadoEvaluacion> EstadoEvaluacion { get; set; }
+        public DbSet<EstadoEvaluacionRepository> EstadoEvaluacion { get; set; }
         public DbSet<Evaluacion> Evaluacion { get; set; }
         public DbSet<LineaTelefonica> LineaTelefonica { get; set; }
         public DbSet<Plan> Plan { get; set; }

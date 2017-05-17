@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2012128180_ENT
 {
-   public class EstadoEvaluacion
+   public class EstadoEvaluacionRepository
     {
         public int EstadoEvaluacionId { get; set; }
 

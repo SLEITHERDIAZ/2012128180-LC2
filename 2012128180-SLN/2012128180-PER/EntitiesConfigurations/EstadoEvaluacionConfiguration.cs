@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.EntitiesConfigurations
 {
-   public class EstadoEvaluacionConfiguration : EntityTypeConfiguration<EstadoEvaluacion>
+   public class EstadoEvaluacionConfiguration : EntityTypeConfiguration<EstadoEvaluacionRepository>
     {
         public EstadoEvaluacionConfiguration()
         {

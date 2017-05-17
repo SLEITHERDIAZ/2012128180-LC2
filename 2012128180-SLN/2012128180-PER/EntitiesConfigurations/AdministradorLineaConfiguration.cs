@@ -16,10 +16,7 @@ namespace _2012128180_PER.EntitiesConfigurations
 
             HasKey(c => c.AdministradorLineaId);
 
-            //LineaTelefonica
-            HasRequired(c => c.LineaTelefonicas);
-                WithMany(c => c.AdministradorLinea);
-
+            
         }
     }
 }
