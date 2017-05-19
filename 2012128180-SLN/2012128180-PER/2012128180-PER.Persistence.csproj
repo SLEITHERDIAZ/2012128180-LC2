@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2012128180DbContext.cs" />
+    <Compile Include="jeffdiazDbContext.cs" />
     <Compile Include="EntitiesConfigurations\AdministradorEquipoConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\AdministradorLineaConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\CentroAtencionConfiguration.cs" />
@@ -60,6 +60,7 @@
     <Compile Include="EntitiesConfigurations\EstadoEvaluacionConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\EvaluacionConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\LineaTelefonicaConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\PlanConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\ProvinciaConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\TipoEvaluacionConfiguration.cs" />
     <Compile Include="EntitiesConfigurations\TipoLineaConfiguration.cs" />
@@ -100,10 +101,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\2012128180-ENT\2012128180-ENT.csproj">
+    <ProjectReference Include="..\2012128180-ENT\2012128180-ENT.Entities.csproj">
       <Project>{A4681BBA-C06C-4519-8036-B1C15A6F6B30}</Project>
-      <Name>2012128180-ENT</Name>
+      <Name>2012128180-ENT.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

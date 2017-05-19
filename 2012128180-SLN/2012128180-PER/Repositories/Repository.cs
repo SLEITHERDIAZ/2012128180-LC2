@@ -1,4 +1,4 @@
-﻿using _2012128180_ENT.IRepositories;
+﻿using _2012128180_EN.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 
-namespace _2012128180_PER.Repositories
+namespace _2012128180_PER.Persistence.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

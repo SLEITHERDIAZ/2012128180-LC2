@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_ENT
+namespace _2012128180_EN.Entities
 {
     public class AdministradorLinea
     {
@@ -15,7 +15,7 @@ namespace _2012128180_ENT
 
         //LineaTelefonica
         public int LineaTelefonicaId { get; set; }
-        public List<LineaTelefonica>LineaTelefonicas{get;set;}
+        public List<LineaTelefonica> LineaTelefonicas { get; set; }
 
         public AdministradorLinea()
         {

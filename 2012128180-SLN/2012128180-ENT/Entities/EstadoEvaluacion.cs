@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_ENT
+namespace _2012128180_EN.Entities
 {
-   public class EstadoEvaluacionRepository
+   public class EstadoEvaluacion
     {
         public int EstadoEvaluacionId { get; set; }
 

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_ENT.IRepositories
+namespace _2012128180_EN.Entities.IRepositories
 {
     public interface IRepository<TEntity> where TEntity : class
     {
@@ -19,8 +19,8 @@ namespace _2012128180_ENT.IRepositories
         IEnumerator<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
         //U PDATES
-        void Update(TEntity entity);
-        void UpdateRange(IEnumerable<TEntity> entities);
+        //void Update(TEntity entity);
+        //void UpdateRange(IEnumerable<TEntity> entities);
 
         //D ELETES
         void Delete(TEntity entity);

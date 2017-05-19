@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_ENT
+namespace _2012128180_EN.Entities
 {
    public class Trabajador
     {
@@ -12,5 +12,14 @@ namespace _2012128180_ENT
         public int TrabajadorId { get; set; }
 
         public string Nombre { get; set; }
+
+        public List<TipoTrabajador> TipoTrabajadores { get; set; }
+
+        public Trabajador()
+        {
+
+               TipoTrabajadores  = new List<TipoTrabajador>();
+
+        }
     }
 }

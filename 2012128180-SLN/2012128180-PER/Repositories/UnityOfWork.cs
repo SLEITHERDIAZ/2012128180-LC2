@@ -1,16 +1,17 @@
-﻿using _2012128180_ENT;
-using _2012128180_ENT.IRepositories;
+﻿using _2012128180_EN.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_PER.Repositories
+namespace _2012128180_PER.Persistence.Repositories
 {
     class UnityOfWork : IUnityOfWork
     {
-        private _2012128180DbContext _Context;
+        private readonly jeffdiazDbContext _Context;
+        private static UnityOfWork _Instance;
+        private static readonly object _lock = new object();
 
         public IAdministradorEquipoRepository AdministradorEquipo { get; private set; }
         public IAdministradorLineaRepository AdministradorLinea { get; private set; }
@@ -37,7 +38,7 @@ namespace _2012128180_PER.Repositories
 
         private UnityOfWork()
         {
-            _Context = new _2012128180DbContext(_Context);
+            _Context = new jeffdiazDbContext(_Context);
 
             AdministradorEquipo = new AdministradorEquipoRepository(_Context);
             AdministradorLinea = new AdministradorLineaRepository(_Context);
@@ -63,15 +64,30 @@ namespace _2012128180_PER.Repositories
             Ventas = new VentasRepository(_Context);
         }
 
-
-        void IDisposable.Dispose()
+        public static UnityOfWork Instance
         {
-            throw new NotImplementedException();
+            get
+            {
+                lock (_lock)
+                {
+                    if (_Instance == null)
+                        _Instance = new UnityOfWork();
+                }
+
+                return Instance;
+            }
         }
 
-        int IUnityOfWork.SaveChanges()
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            _Context.Dispose();
         }
+
+        public int SaveChanges()
+        {
+            return _Context.SaveChanges();
+        }
+
+        
     }
 }

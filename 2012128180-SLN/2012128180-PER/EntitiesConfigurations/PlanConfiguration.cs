@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.EntitiesConfigurations
 {
-   public class TipoTrabajadorConfiguration : EntityTypeConfiguration<TipoTrabajador>
+    class PlanConfiguration : EntityTypeConfiguration<Plan>
     {
-        public TipoTrabajadorConfiguration()
+        public PlanConfiguration()
         {
+            ToTable("Provincia");
+            HasKey(c => c.PlanId);
 
-            ToTable("TipoTrabajador");
-
-
-            HasKey(c => c.TipoTrabajadorId);
 
         }
     }
+
+   
 }

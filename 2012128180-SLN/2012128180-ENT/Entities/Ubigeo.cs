@@ -4,59 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_ENT
+namespace _2012128180_EN.Entities
 {
    public class Ubigeo
-    {
+   {
         public int UbigeoId { get; set; }
+        public string Nombre { get; set; }
 
-       public class Distrito
-            {
-                public Distrito _Distrito;
+        public int DepartamentoId { get; set; }
+        public Departamento Departamento { get; set; }
 
+        public int DistritoId { get; set; }
+        public Distrito Distrito { get; set; }
 
-                public Distrito(Distrito DistritoId)
-                {
-                    _Distrito = DistritoId;
-
-
-                }
-
-
-
-                public Distrito DistritoId { get { return _Distrito; } }
-
-
-
-            }
-
-           public class Provincia
-            {
-                public Provincia _Provincia;
-
-
-                public Provincia(Provincia ProvinciaId)
-                {
-                    _Provincia = ProvinciaId;
-
-
-                }
-                public Provincia ProvinciaId { get { return _Provincia; } }
-            }
-           public class Departamento
-            {
-                public Departamento _Departamento;
-
-                public Departamento(Departamento DepartamentoId)
-                {
-                    _Departamento = DepartamentoId;
-                }
-
-                public Departamento DepartamentoId { get { return _Departamento; } }
-            }
-            public Ubigeo()
-            { }
-
-        public int _Ubigeo { get; set; }
+        public int ProvinciaId { get; set; }
+        public Provincia Procincia { get; set; }
     }
-    }
+}
