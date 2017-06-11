@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,13 @@ namespace _2012128180_EN.Entities
     {
 
         public int TipoTrabajadorId { get; set; }
-
-        public string Nombre { get; set; }
-
+     
+        public ICollection<Trabajador> Trabajador { get; set; }
         public int TrabajadorId { get; set; }
-        public Trabajador Trabajador { get; set; }
+
+        public TipoTrabajador()
+        {
+            Trabajador = new Collection<Trabajador>();
+        }
     }
 }

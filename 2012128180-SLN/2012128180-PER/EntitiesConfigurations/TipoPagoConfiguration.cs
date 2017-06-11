@@ -6,16 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_PER.Persistence.EntitiesConfigurations
+namespace _2012128180_PER.EntitiesConfigurations
 {
-   public class TipoPagoConfiguration : EntityTypeConfiguration<TipoPago>
+    public class TipoPagoConfiguration:EntityTypeConfiguration<TipoPago>
     {
         public TipoPagoConfiguration()
         {
             ToTable("TipoPago");
-
             HasKey(c => c.TipoPagoId);
-
         }
     }
 }

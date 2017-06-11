@@ -12,8 +12,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public ContratoConguration()
         {
-            ToTable("Contrato");
-
+            ToTable("Contratos");
             HasKey(c => c.ContratoId);
 
         }

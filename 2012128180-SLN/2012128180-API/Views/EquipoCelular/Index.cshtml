@@ -1,0 +1,73 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.EquipoCelular>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo EquipoCelular", "Create")
+</p>
+<table Id="tbl_EquipoCelular" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>EquipoCelular Id:</th>
+            <th>AdministradorEquipo Id:</th>
+            <th>Evaluacion Id:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_EquipoCelular")
+            .DataTable({
+                ajax: {
+                    url: "/API/EquipoCelular",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "EquipoCelularId" },
+                    { data: "AdministradorEquipo.AdministradorEquipoId" },
+                    { data: "Evaluacion.EvaluacionId" },
+
+
+                    {
+                        data: "EquipoCelularId",
+                        render: function (data, type, EquipoCelular) {
+                            return "<a href = '/EquipoCelular/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "EquipoCelularId",
+                        render: function (data, type, EquipoCelular) {
+                            return "<a href = '/EquipoCelular/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "EquipoCelularId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-EquipoCelular-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

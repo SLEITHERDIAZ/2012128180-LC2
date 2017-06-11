@@ -13,9 +13,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
         public TipoPlanConfiguration()
         {
 
-            ToTable("TipoPlan");
-
-
+            ToTable("TiposPlan");
             HasKey(c => c.TipoPlanId);
 
         }

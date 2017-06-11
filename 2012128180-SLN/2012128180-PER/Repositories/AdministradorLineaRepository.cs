@@ -10,13 +10,7 @@ namespace _2012128180_PER.Persistence.Repositories
 {
     public class AdministradorLineaRepository : Repository<AdministradorLinea>, IAdministradorLineaRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public AdministradorLineaRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private AdministradorLineaRepository()
+        public AdministradorLineaRepository(JeffdiazDbContext _context) : base(_context)
         {
 
         }

@@ -12,8 +12,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public AdministradorEquipoConfiguration()
         {
-            ToTable("AdministradorEquipos");
-
+            ToTable("AdministradoresEquipos");
             HasKey(c => c.AdministradorEquipoId);
 
         }

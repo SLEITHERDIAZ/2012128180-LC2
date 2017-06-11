@@ -1,0 +1,77 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.LineaTelefonica>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo LineaTelefonica", "Create")
+</p>
+<table Id="tbl_LineaTelefonica" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>LineaTelefonica Id:</th>
+            <th>TipoLinea Id:</th>
+            <th>AdministradorLinea Id:</th>
+            <th>Ventas Id:</th>
+            <th>Evaluacion Id:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_LineaTelefonica")
+            .DataTable({
+                ajax: {
+                    url: "/API/LineaTelefonica",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "LineaTelefonicaId" },
+                    { data: "TipoLinea.TipoLineaId" },
+                    { data: "AdministradorLinea.AdministradorLineaId" },
+                    { data: "Ventas.VentasId" },
+                    { data: "Evaluacion.EvaluacionId" },
+
+
+                    {
+                        data: "LineaTelefonicaId",
+                        render: function (data, type, LineaTelefonica) {
+                            return "<a href = '/LineaTelefonica/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "LineaTelefonica",
+                        render: function (data, type, LineaTelefonica) {
+                            return "<a href = '/LineaTelefonica/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "LineaTelefonica",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-LineaTelefonica-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.LineaTelefonica>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdministradorLinea.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ventas.VentasId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VentasId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EvaluacionId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdministradorLinea.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ventas.VentasId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VentasId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EvaluacionId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { Id=item.LineaTelefonicaId }) |
+            @Html.ActionLink("Details", "Details", new { Id=item.LineaTelefonicaId }) |
+            @Html.ActionLink("Delete", "Delete", new { Id=item.LineaTelefonicaId })
+        </td>
+    </tr>
+}
+
+</table>

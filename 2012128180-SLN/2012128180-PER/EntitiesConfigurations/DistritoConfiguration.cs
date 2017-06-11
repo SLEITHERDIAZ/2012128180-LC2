@@ -12,10 +12,12 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public DistritoConfiguration()
         {
-            ToTable("Distrito");
-
+            ToTable("Distritos");
             HasKey(c => c.DistritoId);
 
+            HasRequired(c => c.Provincia)
+                .WithMany(c => c.Distritos)
+                .HasForeignKey(c => c.ProvinciaId);
         }
     }
 }

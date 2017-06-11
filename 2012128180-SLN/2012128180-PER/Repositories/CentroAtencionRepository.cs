@@ -10,13 +10,7 @@ namespace _2012128180_PER.Persistence.Repositories
 {
     public class CentroAtencionRepository : Repository<CentroAtencion>, ICentroAtencionRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public CentroAtencionRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private CentroAtencionRepository()
+        public CentroAtencionRepository(JeffdiazDbContext _context) : base(_context)
         {
 
         }

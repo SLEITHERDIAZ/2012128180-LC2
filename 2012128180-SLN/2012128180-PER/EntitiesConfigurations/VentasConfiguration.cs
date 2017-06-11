@@ -13,9 +13,25 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
         public VentasConfiguration()
         {
             ToTable("Ventas");
-
             HasKey(c => c.VentasId);
 
+            HasRequired(c => c.CentroAtencion)
+                .WithMany(c => c.Ventas);
+
+            HasRequired(c => c.Contrato)
+                .WithRequiredPrincipal(c => c.Ventas);
+
+            HasRequired(c => c.TipoPago)
+                .WithMany(c => c.Ventas);
+
+            HasRequired(c => c.Clientes)
+                .WithMany(c => c.Ventas);
+
+            HasRequired(c => c.Evaluacion)
+                .WithRequiredPrincipal(c => c.Ventas);
+
+            HasRequired(a => a.LineaTelefonica)
+                .WithRequiredPrincipal(c => c.Ventas);
         }
     }
 }

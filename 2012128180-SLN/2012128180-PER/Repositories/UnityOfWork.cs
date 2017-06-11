@@ -1,4 +1,5 @@
-﻿using _2012128180_EN.Entities.IRepositories;
+﻿using _2012128180_EN.Entities;
+using _2012128180_EN.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.Repositories
 {
-    class UnityOfWork : IUnityOfWork
+    public class UnityOfWork:IUnityOfWork
     {
-        private readonly jeffdiazDbContext _Context;
-        private static UnityOfWork _Instance;
-        private static readonly object _lock = new object();
+        private readonly JeffdiazDbContext _Context;
 
         public IAdministradorEquipoRepository AdministradorEquipo { get; private set; }
         public IAdministradorLineaRepository AdministradorLinea { get; private set; }
@@ -33,12 +32,16 @@ namespace _2012128180_PER.Persistence.Repositories
         public ITipoPlanRepository TipoPlan { get; private set; }
         public ITipoTrabajadorRepository TipoTrabajador { get; private set; }
         public ITrabajadorRepository Trabajador { get; private set; }
-        public IUbigeoRepository Ubigeo { get; private set; }
         public IVentasRepository Ventas { get; private set; }
 
-        private UnityOfWork()
+        public UnityOfWork()
         {
-            _Context = new jeffdiazDbContext(_Context);
+
+        }
+
+        public UnityOfWork(JeffdiazDbContext JeffdiazDbContext)
+        {
+            _Context = new JeffdiazDbContext();
 
             AdministradorEquipo = new AdministradorEquipoRepository(_Context);
             AdministradorLinea = new AdministradorLineaRepository(_Context);
@@ -47,40 +50,24 @@ namespace _2012128180_PER.Persistence.Repositories
             Contrato = new ContratoRepository(_Context);
             Departamento = new DepartamentoRepository(_Context);
             Direccion = new DireccionRepository(_Context);
-            Distrito = new DistritoRepository(_Context);
+            Distrito=new DistritoRepository(_Context);
             EquipoCelular = new EquipoCelularRepository(_Context);
             EstadoEvaluacion = new EstadoEvaluacionRepository(_Context);
             Evaluacion = new EvaluacionRepository(_Context);
             LineaTelefonica = new LineaTelefonicaRepository(_Context);
-            Plan = new PlanRepository(_Context);
-            Provincia = new ProvinciaRepository(_Context);
-            TipoEvaluacion = new TipoEvaluacionRepository(_Context);
-            TipoLinea = new TipoLineaRepository(_Context);
-            TipoPago = new TipoPagoRepository(_Context);
-            TipoPlan = new TipoPlanRepository(_Context);
-            TipoTrabajador = new TipoTrabajadorRepository(_Context);
-            Trabajador = new TrabajadorRepository(_Context);
-            Ubigeo = new UbigeoRepository(_Context);
-            Ventas = new VentasRepository(_Context);
-        }
+            Plan=new PlanRepository(_Context);
+            Provincia=new ProvinciaRepository(_Context);
+            TipoEvaluacion=new TipoEvaluacionRepository(_Context);
+            TipoLinea=new TipoLineaRepository(_Context);
+            TipoPago=new TipoPagoRepository(_Context);
+            TipoPlan=new TipoPlanRepository(_Context);
+            TipoTrabajador=new TipoTrabajadorRepository(_Context);
+            Trabajador=new TrabajadorRepository(_Context);
+            Ventas=new VentasRepository(_Context);
 
-        public static UnityOfWork Instance
-        {
-            get
-            {
-                lock (_lock)
-                {
-                    if (_Instance == null)
-                        _Instance = new UnityOfWork();
-                }
 
-                return Instance;
-            }
-        }
 
-        public void Dispose()
-        {
-            _Context.Dispose();
+
         }
 
         public int SaveChanges()
@@ -88,6 +75,14 @@ namespace _2012128180_PER.Persistence.Repositories
             return _Context.SaveChanges();
         }
 
-        
+        public void StateModified(object Entity)
+        {
+            _Context.Entry(Entity).State = System.Data.Entity.EntityState.Modified;
+        }
+
+        public void Dispose()
+        {
+            _Context.Dispose();
+        }
     }
 }

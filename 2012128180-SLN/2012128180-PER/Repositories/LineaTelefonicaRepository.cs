@@ -10,13 +10,7 @@ namespace _2012128180_PER.Persistence.Repositories
 {
     public class LineaTelefonicaRepository : Repository<LineaTelefonica>, ILineaTelefonicaRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public LineaTelefonicaRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private LineaTelefonicaRepository()
+        public LineaTelefonicaRepository(JeffdiazDbContext _Context) : base(_Context)
         {
 
         }

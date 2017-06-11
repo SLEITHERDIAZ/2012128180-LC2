@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.Repositories
 {
-    public class TipoEvaluacionRepository : Repository<TipoEvaluacion>, ITipoEvaluacionRepository
+    public class TipoEvaluacionRepository:Repository<TipoEvaluacion>,ITipoEvaluacionRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public TipoEvaluacionRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private TipoEvaluacionRepository()
+        public TipoEvaluacionRepository(JeffdiazDbContext _Context):base(_Context)
         {
 
         }

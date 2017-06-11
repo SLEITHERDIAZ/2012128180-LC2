@@ -61,7 +61,6 @@
     <Compile Include="Entities\TipoPlan.cs" />
     <Compile Include="Entities\TipoTrabajador.cs" />
     <Compile Include="Entities\Trabajador.cs" />
-    <Compile Include="Entities\Ubigeo.cs" />
     <Compile Include="Entities\Ventas.cs" />
     <Compile Include="IRepositories\IAdministradorEquipoRepository.cs" />
     <Compile Include="IRepositories\IAdministradorLineaRepository.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="IRepositories\ITipoPlanRepository.cs" />
     <Compile Include="IRepositories\ITipoTrabajadorRepository.cs" />
     <Compile Include="IRepositories\ITrabajadorRepository.cs" />
-    <Compile Include="IRepositories\IUbigeoRepository.cs" />
     <Compile Include="IRepositories\IUnityOfWork.cs" />
     <Compile Include="IRepositories\IVentasRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

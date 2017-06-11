@@ -1,0 +1,85 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.Evaluacion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Evaluacion", "Create")
+</p>
+<table Id="tbl_Evaluacion" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Evaluacion Id:</th>
+            <th>EstadoEvaluacion Id:</th>
+            <th>TipoEvaluacion Id:</th>
+            <th>Ventas Id:</th>
+            <th>LineaTelefonica Id:</th>
+            <th>EquipoCelular Id:</th>
+            <th>Plan Id:</th>
+            <th>Trabajador Id:</th>
+            <th>CentroEvaluacion Id:</th>
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Evaluacion")
+            .DataTable({
+                ajax: {
+                    url: "/API/Evaluacion",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "EvaluacionId" },
+                    { data: "EstadoEvaluacion.EstadoEvaluacionId" },
+                    { data: "TipoEvaluacion.TipoEvaluacionId" },
+                    { data: "Ventas.VentasId" },
+                    { data: "LineaTelefonica.LineaTelefonicaId" },
+                    { data: "EquipoCelular.EquipoCelularId" },
+                    { data: "Plan.PlanId" },
+                    { data: "Trabajador.TrabajadorId" },
+                    { data: "CentroEvaluacion.CentroEvaluacionId" },
+
+                    {
+                        data: "EvaluacionId",
+                        render: function (data, type, Evaluacion) {
+                            return "<a href = '/Evaluacion/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "EvaluacionId",
+                        render: function (data, type, Evaluacion) {
+                            return "<a href = '/Evaluacion/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "EvaluacionId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Evaluacion-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

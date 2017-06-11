@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.TipoPlan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo TipoPlan", "Create")
+</p>
+<table Id="tbl_TipoPlan" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>TipoPlan Id:</th>
+            <th>Planes Id:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_TipoPlan")
+            .DataTable({
+                ajax: {
+                    url: "/API/TipoPlan",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "TipoPlanId" },
+                    { data: "Plan.PlanId" },
+
+                    {
+                        data: "TipoPlanId",
+                        render: function (data, type, TipoPlan) {
+                            return "<a href = '/TipoPlan/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "TipoPlanId",
+                        render: function (data, type, TipoPlan) {
+                            return "<a href = '/TipoPlan/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "TipoPlanId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-TipoPlan-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

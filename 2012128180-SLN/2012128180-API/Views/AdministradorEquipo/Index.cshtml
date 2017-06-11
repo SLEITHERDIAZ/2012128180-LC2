@@ -1,0 +1,71 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.AdministradorEquipo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo AdministradorEquipo", "Create")
+</p>
+<table Id="tbl_AdministradorEquipo" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>AdministradorEquipo Id:</th>
+            <th>EquipoCelular Id:</th>
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_AdministradorEquipo")
+            .DataTable({
+                ajax: {
+                    url: "/API/AdministradorEquipo",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "AdministradorEquipoId" },
+                    { data: "EquipoCelular.EquipoCelularId" },
+               
+                    {
+                        data: "AdministradorEquipoId",
+                        render: function (data, type, AdministradorEquipo) {
+                            return "<a href = '/AdministradorEquipo/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "AdministradorEquipoId",
+                        render: function (data, type, AdministradorEquipo) {
+                            return "<a href = '/Actor/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "AdministradorEquipoId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-AdministradorEquipo-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

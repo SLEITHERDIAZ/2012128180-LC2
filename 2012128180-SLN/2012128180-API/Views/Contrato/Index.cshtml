@@ -1,0 +1,72 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.Contrato>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Contrato", "Create")
+</p>
+<table Id="tbl_Contrato" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Contrato Id:</th>
+            <th>Ventas Id:</th>
+ 
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Contrato")
+            .DataTable({
+                ajax: {
+                    url: "/API/Contrato",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "ContratoId" },
+                    { data: "Ventas.VentasId" },
+
+                    {
+                        data: "ContratoId",
+                        render: function (data, type, Contrato) {
+                            return "<a href = '/Contrato/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "ContratoId",
+                        render: function (data, type, Contrato) {
+                            return "<a href = '/Contrato/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "ContratoId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Contrato-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

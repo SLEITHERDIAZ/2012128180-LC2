@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.TipoPago>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo TipoPago", "Create")
+</p>
+<table Id="tbl_TipoPago" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>TipoPago Id:</th>
+            <th>Ventas Id:</th>
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_TipoPago")
+            .DataTable({
+                ajax: {
+                    url: "/API/TipoPago",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "TipoPagoId" },
+                    { data: "Ventas.VentasId" },
+
+                    {
+                        data: "TipoPagoId",
+                        render: function (data, type, TipoPago) {
+                            return "<a href = '/TipoPago/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "TipoPagoId",
+                        render: function (data, type, TipoPago) {
+                            return "<a href = '/TipoPago/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "TipoPagoId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-TipoPago-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

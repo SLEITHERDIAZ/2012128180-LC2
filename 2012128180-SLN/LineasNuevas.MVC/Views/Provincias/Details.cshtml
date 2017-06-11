@@ -1,0 +1,43 @@
+﻿@model _2012128180_EN.Entities.Provincia
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Provincia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento.NombreDepar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamento.NombreDepar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CadenaUbigeo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CadenaUbigeo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Id = Model.ProvinciaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

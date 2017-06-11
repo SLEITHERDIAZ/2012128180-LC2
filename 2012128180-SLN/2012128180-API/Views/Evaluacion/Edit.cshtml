@@ -1,0 +1,59 @@
+﻿@model _2012128180_EN.Entities.Evaluacion
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Evaluacion</h4>
+        <hr />
+        @Html.ValIdationSummary(true)
+        @Html.HIddenFor(model => model.EvaluacionId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VentasId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VentasId)
+                @Html.ValIdationMessageFor(model => model.VentasId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrabajadorId, "TrabajadorId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TrabajadorId", String.Empty)
+                @Html.ValIdationMessageFor(model => model.TrabajadorId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CentroAtencionId, "CentroAtencionId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CentroAtencionId", String.Empty)
+                @Html.ValIdationMessageFor(model => model.CentroAtencionId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

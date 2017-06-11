@@ -12,10 +12,12 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public DireccionConfiguration()
         {
-            ToTable("Direccion");
-
+            ToTable("Direcciones");
             HasKey(c => c.DireccionId);
 
+            HasRequired(d => d.Distrito)
+              .WithMany(d => d.Direccion)
+              .HasForeignKey(d => d.DistritoId);
         }
     }
 }

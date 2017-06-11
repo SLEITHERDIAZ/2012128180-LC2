@@ -1,0 +1,35 @@
+﻿@model _2012128180_EN.Entities.Distrito
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Distrito</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Provincia.NombrePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provincia.NombrePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreDis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreDis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Id = Model.DistritoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

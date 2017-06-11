@@ -10,15 +10,11 @@ namespace _2012128180_PER.Persistence.Repositories
 {
     public class AdministradorEquipoRepository : Repository<AdministradorEquipo>, IAdministradorEquipoRepository
     {
-        private readonly jeffdiazDbContext _Context;
 
-        public AdministradorEquipoRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private AdministradorEquipoRepository()
+        public AdministradorEquipoRepository(JeffdiazDbContext _context) : base(_context)
         {
 
         }
+
     }
 }

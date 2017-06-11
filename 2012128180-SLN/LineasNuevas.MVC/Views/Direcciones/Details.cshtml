@@ -1,0 +1,51 @@
+﻿@model _2012128180_EN.Entities.Direccion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Direccion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CentroAtencion.CentroAtencionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentroAtencion.CentroAtencionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distrito.NombreDis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distrito.NombreDis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreDire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreDire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CentroAtencionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentroAtencionId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Id = Model.DireccionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

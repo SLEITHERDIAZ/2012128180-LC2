@@ -12,9 +12,12 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public CentroAtencionConfiguration()
         {
-            ToTable("CentroAtencion");
-
+            ToTable("CentrosAtencion");
             HasKey(c => c.CentroAtencionId);
+
+            HasRequired(c => c.Direccion)
+                .WithRequiredPrincipal(c => c.CentroAtencion);
+
 
         }
     }

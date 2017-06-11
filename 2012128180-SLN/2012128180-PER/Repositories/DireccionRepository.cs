@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.Repositories
 {
-    public class DireccionRepository : Repository<Direccion>, IDireccionRepository
+    public class DireccionRepository:Repository<Direccion>,IDireccionRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public DireccionRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private DireccionRepository()
+        public DireccionRepository(JeffdiazDbContext _Context):base(_Context)
         {
 
         }

@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.Repositories
 {
-    public class EquipoCelularRepository : Repository<EquipoCelular>, IEquipoCelularRepository
+    public class EquipoCelularRepository:Repository<EquipoCelular>,IEquipoCelularRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public EquipoCelularRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private EquipoCelularRepository()
+        public EquipoCelularRepository(JeffdiazDbContext _Context):base(_Context)
         {
 
         }

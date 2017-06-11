@@ -1,0 +1,19 @@
+﻿@model _2012128180_EN.Entities.TipoPlan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Id = Model.TipoPlanId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

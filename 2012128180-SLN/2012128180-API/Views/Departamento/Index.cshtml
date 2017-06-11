@@ -1,0 +1,71 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.Departamento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Departamento", "Create")
+</p>
+<table Id="tbl_Departamento" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Departamento Id:</th>
+            <th>Provincias Id:</th>
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Departamento")
+            .DataTable({
+                ajax: {
+                    url: "/API/Departamento",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "DepartamentoId" },
+                    { data: "Provincia.ProvinciaId" },
+
+                    {
+                        data: "DepartamentoId",
+                        render: function (data, type, Departamento) {
+                            return "<a href = '/Departamento/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "DepartamentoId",
+                        render: function (data, type, Departamento) {
+                            return "<a href = '/Departamento/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "DepartamentoId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Departamento-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

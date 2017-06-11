@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.Repositories
 {
-    public class DistritoRepository : Repository<Distrito>, IDistritoRepository
+    public class DistritoRepository:Repository<Distrito>,IDistritoRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public DistritoRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private DistritoRepository()
+        public DistritoRepository(JeffdiazDbContext _Context):base(_Context)
         {
 
         }

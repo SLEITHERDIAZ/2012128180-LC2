@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace _2012128180_EN.Entities
 {
-   public class Direccion
+    public class Direccion
     {
         public int DireccionId { get; set; }
-        public string Nombre { get; set; }
+        public string NombreDire { get; set; }
 
-        public int UbigeoId { get; set; }
-        public Ubigeo Ubigeo { get; set; }
-    }
+        string CadenaUbigeo { get; set; }
+
+        public CentroAtencion CentroAtencion { get; set; }
+        public int CentroAtencionId { get; set; }
+
+        public Distrito Distrito { get; set; }
+        public int DistritoId { get; set;}
+
+    }   
 }

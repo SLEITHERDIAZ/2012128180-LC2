@@ -12,9 +12,11 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public TrabajadorConfiguration()
         {
-            ToTable("Trabajador");
-
+            ToTable("Trabajadores");
             HasKey(c => c.TrabajadorId);
+
+            HasRequired(c => c.TipoTrabajador)
+                .WithMany(c => c.Trabajador);
 
         }
     }

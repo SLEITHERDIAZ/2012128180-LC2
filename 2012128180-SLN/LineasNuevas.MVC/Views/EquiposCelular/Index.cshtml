@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.EquipoCelular>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdministradorEquipo.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdministradorEquipo.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { Id=item.EquipoCelularId }) |
+            @Html.ActionLink("Details", "Details", new { Id=item.EquipoCelularId }) |
+            @Html.ActionLink("Delete", "Delete", new { Id=item.EquipoCelularId })
+        </td>
+    </tr>
+}
+
+</table>

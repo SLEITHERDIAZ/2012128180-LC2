@@ -11,6 +11,7 @@ namespace _2012128180_EN.Entities.IRepositories
         IAdministradorEquipoRepository AdministradorEquipo { get; }
         IAdministradorLineaRepository AdministradorLinea{ get; }
         ICentroAtencionRepository CentroAtencion { get; }
+        IClienteRepository Cliente { get; }
         IContratoRepository Contrato { get; }
         IDepartamentoRepository Departamento { get; }
         IDireccionRepository Direccion { get; }
@@ -27,10 +28,11 @@ namespace _2012128180_EN.Entities.IRepositories
         ITipoPlanRepository TipoPlan { get; }
         ITipoTrabajadorRepository TipoTrabajador { get; }
         ITrabajadorRepository Trabajador { get; }
-        IUbigeoRepository Ubigeo { get; }
         IVentasRepository Ventas { get; }
 
         int SaveChanges();
+
+        void StateModified(object entity);
 
     }
 }

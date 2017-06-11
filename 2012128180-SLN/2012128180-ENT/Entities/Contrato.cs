@@ -12,6 +12,14 @@ namespace _2012128180_EN.Entities
 
         public int ContratoId { get; set; }
 
-        public string Nombre { get; set; }
+        public Ventas Ventas { get; set; }
+        public int VentasId{get;set;}
+      
+        public Contrato()
+        {
+
+        }
+
+
     }
 }

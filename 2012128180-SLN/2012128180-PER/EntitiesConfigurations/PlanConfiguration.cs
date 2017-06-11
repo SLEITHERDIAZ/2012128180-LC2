@@ -12,9 +12,11 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public PlanConfiguration()
         {
-            ToTable("Provincia");
+            ToTable("Plan");
             HasKey(c => c.PlanId);
 
+            HasRequired(c => c.TipoPlan)
+               .WithMany(c => c.Plan);
 
         }
     }

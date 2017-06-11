@@ -1,0 +1,76 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.Direccion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Direccion", "Create")
+</p>
+<table Id="tbl_Direccion" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Direccion Id:</th>
+            <th>CentroAtencion Id:</th>
+            <th>Distrito Id:</th>
+
+
+
+        </tr>
+
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document)
+        .ready(function () {
+            var table = $("#tbl_Direccion")
+            .DataTable({
+                ajax: {
+                    url: "/API/Direccion",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    { data: "DireccionId" },
+                    { data: "CentroAtencion.CentroAtencionId" },
+                    { data: "Distrito.DistritoId" },
+
+
+                    {
+                        data: "DireccionId",
+                        render: function (data, type, Direccion) {
+                            return "<a href = '/Direccion/update/" + data + "'>Actualizar</a>";
+                        }
+
+                    },
+                    {
+
+                        data: "DireccionId",
+                        render: function (data, type, Direccion) {
+                            return "<a href = '/Direccion/details/" + data + "'>Detalles</a>";
+                        }
+                    },
+
+                    {
+                        data: "DireccionId",
+                        render: function (data) {
+                            return "<button class= 'btn btn-link js-delete' data-Direccion-Id=" + data + ">Borrar</button>"
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+    </script>
+
+
+}

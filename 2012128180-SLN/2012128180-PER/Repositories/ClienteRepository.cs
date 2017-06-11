@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.Repositories
 {
-    public class ClienteRepository : Repository<Cliente>, IClienteRepository
+    public class ClienteRepository:Repository<Cliente>,IClienteRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public ClienteRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private ClienteRepository()
+        public ClienteRepository(JeffdiazDbContext _context) : base(_context)
         {
 
         }

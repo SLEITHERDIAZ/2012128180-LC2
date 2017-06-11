@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace _2012128180_PER.Persistence.Repositories
 {
-    public class TipoLineaRepository : Repository<TipoLinea>, ITipoLineaRepository
+    public class TipoLineaRepository:Repository<TipoLinea>,ITipoLineaRepository
     {
-        private readonly jeffdiazDbContext _Context;
-
-        public TipoLineaRepository(jeffdiazDbContext context)
-        {
-            _Context = context;
-        }
-        private TipoLineaRepository()
+        public TipoLineaRepository(JeffdiazDbContext _Context):base(_Context)
         {
 
         }

@@ -12,8 +12,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public ClienteConfiguration()
         {
-            ToTable("Cliente");
-
+            ToTable("Clientes");
             HasKey(c => c.ClienteId);
 
         }

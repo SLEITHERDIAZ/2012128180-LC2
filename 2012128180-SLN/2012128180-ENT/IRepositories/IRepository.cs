@@ -9,16 +9,18 @@ namespace _2012128180_EN.Entities.IRepositories
 {
     public interface IRepository<TEntity> where TEntity : class
     {
+        IQueryable<TEntity> GETEntity();
+
         //C REATES
         void Add(TEntity entity);
         void AddRange(IEnumerable<TEntity> entities);
 
         //R EADS
-        TEntity Get(int Id);
+        TEntity Get(int? Id);
         IEnumerable<TEntity> GetAll();
-        IEnumerator<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
-        //U PDATES
+        ////U PDATES
         //void Update(TEntity entity);
         //void UpdateRange(IEnumerable<TEntity> entities);
 

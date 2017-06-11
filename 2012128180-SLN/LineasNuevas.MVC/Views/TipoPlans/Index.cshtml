@@ -1,0 +1,28 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.TipoPlan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { Id=item.TipoPlanId }) |
+            @Html.ActionLink("Details", "Details", new { Id=item.TipoPlanId }) |
+            @Html.ActionLink("Delete", "Delete", new { Id=item.TipoPlanId })
+        </td>
+    </tr>
+}
+
+</table>

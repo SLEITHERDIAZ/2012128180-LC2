@@ -13,9 +13,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
         public TipoTrabajadorConfiguration()
         {
 
-            ToTable("TipoTrabajador");
-
-
+            ToTable("TiposTrabajador");
             HasKey(c => c.TipoTrabajadorId);
 
         }

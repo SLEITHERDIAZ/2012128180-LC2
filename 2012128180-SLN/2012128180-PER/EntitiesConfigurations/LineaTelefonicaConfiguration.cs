@@ -12,10 +12,15 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public LineaTelefonicaConfiguration()
         {
-            ToTable("LineaTelefonica");
-
+            ToTable("LineasTelefonicas");
             HasKey(c => c.LineaTelefonicaId);
 
+            HasRequired(c => c.AdministradorLinea)
+                .WithMany(c => c.LineaTelefonicas)
+                .HasForeignKey(c => c.AdministradorLineaId);
+
+            HasRequired(c => c.TipoLinea)
+                .WithMany(c => c.LineaTelefonica);
         }
     }
 }

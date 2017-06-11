@@ -8,5 +8,6 @@ namespace _2012128180_EN.Entities.IRepositories
 {
     public interface IEstadoEvaluacionRepository : IRepository<EstadoEvaluacion>
     {
+
     }
 }

@@ -13,10 +13,12 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
 
         public EquipoCelularConfiguration()
         {
-            ToTable("EquipoCelular");
-
+            ToTable("EquiposCelular");
             HasKey(c => c.EquipoCelularId);
 
+            HasRequired(a => a.AdministradorEquipo)
+               .WithMany(e => e.EquipoCelular)
+               .HasForeignKey(a => a.AdministradorEquipoId);
         }
     }
 }

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_2012128180_EN.Entities.Departamento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreDepar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProvinciId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreDepar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProvinciId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { Id=item.DepartamentoId }) |
+            @Html.ActionLink("Details", "Details", new { Id=item.DepartamentoId }) |
+            @Html.ActionLink("Delete", "Delete", new { Id=item.DepartamentoId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model _2012128180_EN.Entities.EquipoCelular
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EquipoCelular</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministradorEquipo.AdministradorEquipoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministradorEquipo.AdministradorEquipoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EvaluacionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EvaluacionId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Id = Model.EquipoCelularId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

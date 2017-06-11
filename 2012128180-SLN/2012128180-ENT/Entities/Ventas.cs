@@ -10,33 +10,23 @@ namespace _2012128180_EN.Entities
     {
 
         public int VentasId { get; set; }
-        public string Nombre { get; set; }
 
-        public int LineaTelfonicaId { get; set; }
-        public LineaTelefonica LineaTelefonica { get; set; }
+        public Cliente Clientes { get; set; }
 
-        public int ContratoId { get; set; }
+        public TipoPago TipoPago { get; set; }
+
         public Contrato Contrato { get; set; }
 
-        public int CentroAtencionId { get; set; }
+        public Evaluacion Evaluacion { get; set; }
+
+        public LineaTelefonica LineaTelefonica { get; set; }
+
         public CentroAtencion CentroAtencion { get; set; }
-
-
-        // lista tipo de Cliente
-        public List<Cliente> TipoClientes { get; set; }
-        // lista tipo de pago
-        public List<TipoPago> TipoPagos { get; set; }
+        public int CentroAtencionId { get; set; }
 
         public Ventas()
         {
-            
-                TipoClientes = new List<Cliente>();
-                TipoPagos = new List<TipoPago>();
+ 
         }
-
-        
-        
-
-  
     }
 }

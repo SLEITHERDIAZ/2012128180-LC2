@@ -1,0 +1,51 @@
+﻿@model _2012128180_EN.Entities.Evaluacion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Evaluacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CentroAtencion.CentroAtencionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentroAtencion.CentroAtencionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trabajador.NombreTra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trabajador.NombreTra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ventas.VentasId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ventas.VentasId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VentasId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VentasId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Id = Model.EvaluacionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

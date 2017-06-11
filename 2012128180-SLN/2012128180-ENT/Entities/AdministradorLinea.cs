@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,11 @@ namespace _2012128180_EN.Entities
         public string Nombre { get; set; }
 
         //LineaTelefonica
-        public int LineaTelefonicaId { get; set; }
-        public List<LineaTelefonica> LineaTelefonicas { get; set; }
+        public ICollection<LineaTelefonica> LineaTelefonicas { get; set; }
 
         public AdministradorLinea()
         {
-            LineaTelefonicas = new List<LineaTelefonica>();
+            LineaTelefonicas = new Collection<LineaTelefonica>();
         }
     }
 }

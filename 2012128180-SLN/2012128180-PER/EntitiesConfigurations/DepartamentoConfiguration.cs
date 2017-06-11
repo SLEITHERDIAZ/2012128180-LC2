@@ -13,7 +13,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
         //COnfiguracion de la Tabla
         public DepartamentoConfiguration()
         {
-            ToTable("Departamento");
+            ToTable("Departamentos");
             HasKey(c => c.DepartamentoId);
 
 

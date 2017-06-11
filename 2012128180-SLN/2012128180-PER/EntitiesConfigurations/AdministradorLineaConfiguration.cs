@@ -12,8 +12,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public AdministradorLineaConfiguration()
         {
-            ToTable("AdministradorLinea");
-
+            ToTable("AdministradoresLinea");
             HasKey(c => c.AdministradorLineaId);
 
             

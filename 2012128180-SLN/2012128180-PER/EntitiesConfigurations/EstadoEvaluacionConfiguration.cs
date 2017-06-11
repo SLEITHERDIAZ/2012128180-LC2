@@ -12,8 +12,7 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
     {
         public EstadoEvaluacionConfiguration()
         {
-            ToTable("EstadoEvaluacion");
-
+            ToTable("EstadosEvaluacion");
             HasKey(c => c.EstadoEvaluacionId);
 
         }

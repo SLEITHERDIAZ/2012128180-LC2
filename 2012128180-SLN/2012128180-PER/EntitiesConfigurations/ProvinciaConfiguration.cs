@@ -13,10 +13,13 @@ namespace _2012128180_PER.Persistence.EntitiesConfigurations
         //COnfiguracion de la Tabla
         public ProvinciaConfiguration()
         {
-            ToTable("Provincia");
+            ToTable("Provincias");
             HasKey(c => c.ProvinciaId);
 
-       
+            HasRequired(c => c.Departamento)
+                .WithMany(c => c.Provincias)
+                .HasForeignKey(c => c.DepartamentoId);
+
         }
     }
 }

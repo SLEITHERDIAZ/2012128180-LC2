@@ -6,16 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2012128180_PER.Persistence.EntitiesConfigurations
+namespace _2012128180_PER.EntitiesConfigurations
 {
-   public class TipoEvaluacionConfiguration : EntityTypeConfiguration<TipoEvaluacion>
+    class TipoEvaluacionConfiguration : EntityTypeConfiguration<TipoEvaluacion>
     {
         public TipoEvaluacionConfiguration()
         {
             ToTable("TipoEvaluacion");
-
             HasKey(c => c.TipoEvaluacionId);
 
         }
+
     }
 }
